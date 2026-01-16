@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import Layout from "@/components/layout/Layout";
+import { PageTransition, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations";
 
 // Import product images
 import corrugatedBoxesImg from "@/assets/products/corrugated-boxes.jpg";
@@ -82,71 +84,90 @@ const productCategories = [
 const Products = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="bg-secondary section-padding">
-        <div className="container-wide">
-          <div className="max-w-3xl">
-            <h1 className="heading-display mb-6 opacity-0 animate-fade-in">
-              Our Products
-            </h1>
-            <p className="text-body-large opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              Explore our comprehensive range of corrugated packaging solutions. From standard shipping boxes to custom printed packaging, we have solutions for every need.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Products Grid */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {productCategories.map((product, index) => (
-              <Link
-                key={product.slug}
-                to={`/products/${product.slug}`}
-                className="group bg-background border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 opacity-0 animate-fade-in"
-                style={{ animationDelay: `${index * 0.05}s` }}
+      <PageTransition>
+        {/* Hero Section */}
+        <section className="bg-secondary section-padding">
+          <div className="container-wide">
+            <div className="max-w-3xl">
+              <motion.h1 
+                className="heading-display mb-6"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
               >
-                <div className="aspect-square overflow-hidden bg-secondary">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-display font-semibold text-sm md:text-base mb-2 group-hover:text-accent transition-colors line-clamp-2">
-                    {product.name}
-                  </h3>
-                  <div className="flex items-center gap-1 text-accent font-medium text-sm">
-                    View Details
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </Link>
-            ))}
+                Our Products
+              </motion.h1>
+              <motion.p 
+                className="text-body-large"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                Explore our comprehensive range of corrugated packaging solutions. From standard shipping boxes to custom printed packaging, we have solutions for every need.
+              </motion.p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Custom Solutions CTA */}
-      <section className="bg-kraft-light section-padding">
-        <div className="container-wide">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="heading-section mb-4">Need Custom Packaging?</h2>
-            <p className="text-body-large mb-8">
-              Don't see exactly what you need? We specialize in creating custom packaging solutions tailored to your specific requirements. Share your specifications with us.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-md font-semibold hover:bg-accent/90 transition-colors"
-            >
-              Request Custom Quote
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+        {/* Products Grid */}
+        <section className="section-padding">
+          <div className="container-wide">
+            <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" staggerDelay={0.05}>
+              {productCategories.map((product) => (
+                <StaggerItem key={product.slug}>
+                  <Link
+                    to={`/products/${product.slug}`}
+                    className="group bg-background border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 block"
+                  >
+                    <div className="aspect-square overflow-hidden bg-secondary">
+                      <motion.img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.5 }}
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-display font-semibold text-sm md:text-base mb-2 group-hover:text-accent transition-colors line-clamp-2">
+                        {product.name}
+                      </h3>
+                      <div className="flex items-center gap-1 text-accent font-medium text-sm">
+                        View Details
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </Link>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Custom Solutions CTA */}
+        <section className="bg-kraft-light section-padding">
+          <div className="container-wide">
+            <ScrollReveal className="max-w-3xl mx-auto text-center">
+              <h2 className="heading-section mb-4">Need Custom Packaging?</h2>
+              <p className="text-body-large mb-8">
+                Don't see exactly what you need? We specialize in creating custom packaging solutions tailored to your specific requirements. Share your specifications with us.
+              </p>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-md font-semibold hover:bg-accent/90 transition-colors"
+                >
+                  Request Custom Quote
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </motion.div>
+            </ScrollReveal>
+          </div>
+        </section>
+      </PageTransition>
     </Layout>
   );
 };

@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, Target, Award, Factory, Building2, BadgeCheck, Truck, Settings } from "lucide-react";
+import { ArrowRight, Users, Target, Award, Factory, Building2, BadgeCheck, Settings } from "lucide-react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import { PageTransition, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations";
 
 const values = [
   {
@@ -58,161 +60,181 @@ const companyUSP = [
 const About = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="bg-secondary section-padding">
-        <div className="container-wide">
-          <div className="max-w-3xl">
-            <h1 className="heading-display mb-6 opacity-0 animate-fade-in">
-              Who We Are?
-            </h1>
-            <p className="text-body-large opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <strong>M. R. Enterprises</strong> was established in the year <strong>2000</strong>. With over two decades of experience, we have carved a niche in this industry with our superior quality Corrugated Packaging Boxes and Tapes.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Story Section */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <h2 className="heading-section mb-6">Our Products</h2>
-              <div className="space-y-4 text-body">
-                <p>
-                  We specialize in manufacturing a wide range of superior quality products including:
-                </p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-muted-foreground">
-                  {[
-                    "Corrugated Boxes",
-                    "Duplex Printed Corrugated Boxes",
-                    "Fruits Corrugated Boxes",
-                    "5 Ply Corrugated Box",
-                    "Printed Corrugated Boxes",
-                    "Corrugated Cardboard Boxes",
-                    "Packaging Corrugated Boxes",
-                    "Packing Boxes",
-                    "Corrugated Shipping Boxes",
-                    "Carton Box",
-                    "Corrugated Roll",
-                    "BOPP Tapes",
-                    "BOPP Adhesive Tapes",
-                    "Paper Roll",
-                  ].map((product) => (
-                    <li key={product} className="flex items-center gap-2">
-                      <BadgeCheck className="w-4 h-4 text-accent shrink-0" />
-                      <span>{product}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-4">
-                  These boxes and tapes are available in various sizes. We also undertake tailor-made orders as per specific requirements.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-primary text-primary-foreground p-8 md:p-12 rounded-lg">
-              <h3 className="heading-card text-primary-foreground mb-8">Our Valued Clientele</h3>
-              <p className="text-primary-foreground/80 mb-6">
-                We are a client-oriented organization strongly focused on providing superior quality products that exceed expectations. Our products are manufactured using high-grade raw materials and advanced tools & technology.
-              </p>
-              <div className="space-y-4">
-                {clients.map((client, index) => (
-                  <div
-                    key={client}
-                    className="flex items-center gap-4 opacity-0 animate-fade-in"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <Building2 className="w-5 h-5 text-accent shrink-0" />
-                    <span className="text-lg font-semibold">{client}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="section-padding bg-secondary">
-        <div className="container-wide">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="heading-section mb-4">Our Core Values</h2>
-            <p className="text-body-large">
-              These principles guide every decision we make and every product we create.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => (
-              <div
-                key={value.title}
-                className="bg-background p-6 rounded-lg opacity-0 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+      <PageTransition>
+        {/* Hero Section */}
+        <section className="bg-secondary section-padding">
+          <div className="container-wide">
+            <div className="max-w-3xl">
+              <motion.h1 
+                className="heading-display mb-6"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
               >
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
-                  <value.icon className="w-6 h-6 text-accent" />
-                </div>
-                <h3 className="font-display font-semibold text-lg mb-2">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.description}</p>
-              </div>
-            ))}
+                Who We Are?
+              </motion.h1>
+              <motion.p 
+                className="text-body-large"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <strong>M. R. Enterprises</strong> was established in the year <strong>2000</strong>. With over two decades of experience, we have carved a niche in this industry with our superior quality Corrugated Packaging Boxes and Tapes.
+              </motion.p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Company Information Section */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <h2 className="heading-section mb-6">Basic Information</h2>
-              <div className="bg-secondary rounded-lg p-6 md:p-8">
-                <div className="space-y-4">
-                  {companyInfo.map((info, index) => (
-                    <div
-                      key={info.label}
-                      className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 py-2 border-b border-border last:border-0"
-                    >
-                      <span className="font-semibold text-foreground min-w-[160px]">{info.label}:</span>
-                      <span className="text-muted-foreground">{info.value}</span>
+        {/* Story Section */}
+        <section className="section-padding">
+          <div className="container-wide">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <ScrollReveal direction="left">
+                <h2 className="heading-section mb-6">Our Products</h2>
+                <div className="space-y-4 text-body">
+                  <p>
+                    We specialize in manufacturing a wide range of superior quality products including:
+                  </p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-muted-foreground">
+                    {[
+                      "Corrugated Boxes",
+                      "Duplex Printed Corrugated Boxes",
+                      "Fruits Corrugated Boxes",
+                      "5 Ply Corrugated Box",
+                      "Printed Corrugated Boxes",
+                      "Corrugated Cardboard Boxes",
+                      "Packaging Corrugated Boxes",
+                      "Packing Boxes",
+                      "Corrugated Shipping Boxes",
+                      "Carton Box",
+                      "Corrugated Roll",
+                      "BOPP Tapes",
+                      "BOPP Adhesive Tapes",
+                      "Paper Roll",
+                    ].map((product) => (
+                      <li key={product} className="flex items-center gap-2">
+                        <BadgeCheck className="w-4 h-4 text-accent shrink-0" />
+                        <span>{product}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-4">
+                    These boxes and tapes are available in various sizes. We also undertake tailor-made orders as per specific requirements.
+                  </p>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal direction="right" delay={0.2}>
+                <div className="bg-primary text-primary-foreground p-8 md:p-12 rounded-lg">
+                  <h3 className="heading-card text-primary-foreground mb-8">Our Valued Clientele</h3>
+                  <p className="text-primary-foreground/80 mb-6">
+                    We are a client-oriented organization strongly focused on providing superior quality products that exceed expectations. Our products are manufactured using high-grade raw materials and advanced tools & technology.
+                  </p>
+                  <div className="space-y-4">
+                    {clients.map((client, index) => (
+                      <motion.div
+                        key={client}
+                        className="flex items-center gap-4"
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <Building2 className="w-5 h-5 text-accent shrink-0" />
+                        <span className="text-lg font-semibold">{client}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Values Section */}
+        <section className="section-padding bg-secondary">
+          <div className="container-wide">
+            <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
+              <h2 className="heading-section mb-4">Our Core Values</h2>
+              <p className="text-body-large">
+                These principles guide every decision we make and every product we create.
+              </p>
+            </ScrollReveal>
+
+            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {values.map((value) => (
+                <StaggerItem key={value.title}>
+                  <div className="bg-background p-6 rounded-lg h-full">
+                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                      <value.icon className="w-6 h-6 text-accent" />
                     </div>
+                    <h3 className="font-display font-semibold text-lg mb-2">{value.title}</h3>
+                    <p className="text-sm text-muted-foreground">{value.description}</p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </section>
+
+        {/* Company Information Section */}
+        <section className="section-padding">
+          <div className="container-wide">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <ScrollReveal direction="left">
+                <h2 className="heading-section mb-6">Basic Information</h2>
+                <div className="bg-secondary rounded-lg p-6 md:p-8">
+                  <div className="space-y-4">
+                    {companyInfo.map((info) => (
+                      <div
+                        key={info.label}
+                        className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 py-2 border-b border-border last:border-0"
+                      >
+                        <span className="font-semibold text-foreground min-w-[160px]">{info.label}:</span>
+                        <span className="text-muted-foreground">{info.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal direction="right" delay={0.2}>
+                <h2 className="heading-section mb-6">Company USP</h2>
+                <div className="grid grid-cols-1 gap-4">
+                  {companyUSP.map((usp, index) => (
+                    <motion.div
+                      key={usp}
+                      className="flex items-center gap-4 p-4 bg-kraft-light rounded-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <Settings className="w-5 h-5 text-accent shrink-0" />
+                      <span className="font-medium">{usp}</span>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
-            </div>
-
-            <div>
-              <h2 className="heading-section mb-6">Company USP</h2>
-              <div className="grid grid-cols-1 gap-4">
-                {companyUSP.map((usp, index) => (
-                  <div
-                    key={usp}
-                    className="flex items-center gap-4 p-4 bg-kraft-light rounded-lg opacity-0 animate-fade-in"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <Settings className="w-5 h-5 text-accent shrink-0" />
-                    <span className="font-medium">{usp}</span>
-                  </div>
-                ))}
-              </div>
+              </ScrollReveal>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="bg-primary text-primary-foreground section-padding">
-        <div className="container-wide text-center">
-          <h2 className="heading-section text-primary-foreground mb-4">Packaging Redefined Since 2000</h2>
-          <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto mb-8">
-            Join hundreds of businesses that trust MR Enterprises for their packaging needs. Let's discuss how we can help you.
-          </p>
-          <Button variant="kraft" size="lg" asChild>
-            <Link to="/contact">Contact Us Today</Link>
-          </Button>
-        </div>
-      </section>
+        {/* CTA Section */}
+        <section className="bg-primary text-primary-foreground section-padding">
+          <div className="container-wide text-center">
+            <ScrollReveal>
+              <h2 className="heading-section text-primary-foreground mb-4">Packaging Redefined Since 2000</h2>
+              <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto mb-8">
+                Join hundreds of businesses that trust MR Enterprises for their packaging needs. Let's discuss how we can help you.
+              </p>
+              <Button variant="kraft" size="lg" asChild>
+                <Link to="/contact">Contact Us Today</Link>
+              </Button>
+            </ScrollReveal>
+          </div>
+        </section>
+      </PageTransition>
     </Layout>
   );
 };
