@@ -8,18 +8,27 @@ import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/layout/Layout";
 import { PageTransition, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations";
 
-const contactInfo = [
+const addresses = [
   {
-    icon: MapPin,
-    title: "Visit Us",
+    label: "Head Office",
     details: [
       "D-19 Sector-55, Noida",
       "Plot No - 112, Ground Floor,",
       "Udyog Kendra II, Greater Noida,",
-      "Gautam Buddha Nagar - 201310,",
-      "Uttar Pradesh, India",
+      "Gautam Buddha Nagar - 201310",
     ],
   },
+  {
+    label: "Manufacturing Unit",
+    details: [
+      "Plot No. 10, Gali No. 1,",
+      "Near Shiv Mandir, Khera Choganpur,",
+      "Greater Noida, UP - 201306",
+    ],
+  },
+];
+
+const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
@@ -245,19 +254,51 @@ const Contact = () => {
                 <p className="text-caption text-accent mb-4">Get in Touch</p>
                 <h2 className="heading-card mb-8">Contact Information</h2>
 
-                <StaggerContainer className="space-y-4" staggerDelay={0.1}>
+                {/* Addresses Section */}
+                <div className="space-y-4 mb-6">
+                  <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Our Locations</h3>
+                  <StaggerContainer className="space-y-3" staggerDelay={0.1}>
+                    {addresses.map((address) => (
+                      <StaggerItem key={address.label}>
+                        <motion.div
+                          className="flex gap-4 p-5 bg-secondary rounded-xl"
+                          whileHover={{ x: 5 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                            <MapPin className="w-5 h-5 text-accent" />
+                          </div>
+                          <div>
+                            <h3 className="font-semibold mb-1">{address.label}</h3>
+                            {address.details.map((detail) => (
+                              <p
+                                key={detail}
+                                className="text-sm text-muted-foreground"
+                              >
+                                {detail}
+                              </p>
+                            ))}
+                          </div>
+                        </motion.div>
+                      </StaggerItem>
+                    ))}
+                  </StaggerContainer>
+                </div>
+
+                {/* Contact Info Section */}
+                <StaggerContainer className="space-y-3" staggerDelay={0.1}>
                   {contactInfo.map((info) => (
                     <StaggerItem key={info.title}>
                       <motion.div
-                        className="flex gap-4 p-5 bg-secondary rounded-xl"
+                        className="flex gap-4 p-4 bg-secondary rounded-xl"
                         whileHover={{ x: 5 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                          <info.icon className="w-5 h-5 text-accent" />
+                        <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                          <info.icon className="w-4 h-4 text-accent" />
                         </div>
                         <div>
-                          <h3 className="font-semibold mb-1">{info.title}</h3>
+                          <h3 className="font-semibold text-sm mb-1">{info.title}</h3>
                           {info.details.map((detail) => (
                             <p
                               key={detail}
