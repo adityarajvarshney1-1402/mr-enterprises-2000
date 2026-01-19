@@ -190,7 +190,9 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-accent-foreground shrink-0" />
                 <a
-                  href="mailto:mrenterprises2000@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=mrenterprises2000@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-accent-foreground/80 hover:text-white transition-colors text-sm"
                 >
                   mrenterprises2000@gmail.com
