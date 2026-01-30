@@ -69,7 +69,7 @@ const features = [
 
 const stats = [
   { value: "24", suffix: "+", label: "Years of Excellence" },
-  { value: "50", suffix: "+", label: "Skilled Team Members" },
+  { value: "30", suffix: "+", label: "Skilled Team Members" },
   { value: "10-12", prefix: "₹", suffix: " Cr", label: "Annual Turnover" },
   { value: "100", suffix: "%", label: "Quality Tested" },
 ];
