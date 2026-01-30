@@ -8,15 +8,12 @@ interface PageTransitionProps {
 const pageVariants: Variants = {
   initial: {
     opacity: 0,
-    y: 20,
   },
   animate: {
     opacity: 1,
-    y: 0,
   },
   exit: {
     opacity: 0,
-    y: -20,
   },
 };
 
@@ -29,8 +26,8 @@ const PageTransition = ({ children }: PageTransitionProps) => {
       variants={pageVariants}
       transition={{
         type: "tween",
-        ease: "anticipate",
-        duration: 0.4,
+        ease: "easeInOut",
+        duration: 0.25,
       }}
     >
       {children}
