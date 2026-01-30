@@ -77,11 +77,11 @@ const Products = () => {
                       className="bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
                       whileHover={{ y: -5 }}
                     >
-                      <div className="aspect-square overflow-hidden bg-secondary relative">
+                      <div className="aspect-square overflow-hidden bg-white relative">
                         <motion.img
                           src={product.image}
                           alt={product.name}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain p-4"
                           whileHover={{ scale: 1.05 }}
                           transition={{ duration: 0.5 }}
                         />
