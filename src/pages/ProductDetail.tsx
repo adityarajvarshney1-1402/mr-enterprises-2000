@@ -121,7 +121,7 @@ const ProductDetail = () => {
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full aspect-square object-cover"
+                    className="w-full aspect-square object-contain bg-white p-4"
                   />
                 </motion.div>
               </ScrollReveal>
