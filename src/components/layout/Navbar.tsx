@@ -7,7 +7,7 @@ import logo from "@/assets/mr-enterprises-logo.jpg";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
+  { name: "About Us", path: "/about" },
   { name: "Products", path: "/products" },
   { name: "Contact", path: "/contact" },
 ];
