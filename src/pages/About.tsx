@@ -36,7 +36,7 @@ const companyInfo = [
   { label: "Total Employees", value: "26 to 50 People" },
   { label: "Established", value: "2000" },
   { label: "Legal Status", value: "Proprietorship" },
-  { label: "Annual Turnover", value: "₹5 - 25 Cr" },
+  { label: "Annual Turnover", value: "₹10 - 12 Cr" },
   { label: "GST No.", value: "09ABRPV1756E1Z4" },
 ];
 
