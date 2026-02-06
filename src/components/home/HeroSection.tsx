@@ -10,7 +10,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Corrugated box manufacturing facility in Greater Noida"
+          alt="Corrugated box manufacturing facility in Noida and Greater Noida"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 gradient-hero" />
@@ -24,7 +24,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Trusted Corrugated Box Manufacturer in Greater Noida
+            Trusted Corrugated Box Manufacturer in Noida & Greater Noida
           </motion.p>
 
           <motion.h1
@@ -35,7 +35,7 @@ const HeroSection = () => {
           >
             Leading Corrugated Boxes &{" "}
             <span className="text-accent">Packaging Solutions</span>{" "}
-            in Greater Noida
+            in Noida & Greater Noida
           </motion.h1>
 
           <motion.p

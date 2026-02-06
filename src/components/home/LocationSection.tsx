@@ -12,7 +12,7 @@ const LocationSection = () => {
             </div>
             <div>
               <h2 className="heading-card mb-4">
-                Corrugated Boxes in Greater Noida — Delivered Across Delhi NCR
+                Corrugated Boxes in Noida & Greater Noida — Delivered Across Delhi NCR
               </h2>
               <p className="text-body">
                 Based in Greater Noida, Gautam Buddha Nagar, MR Enterprises is

@@ -53,7 +53,7 @@ const StatsSection = () => {
             Building Trust Through Quality
           </h2>
           <p className="text-body-large">
-            With over two decades of dedication in Greater Noida, we've established ourselves
+            With over two decades of dedication in Noida and Greater Noida, we've established ourselves
             as a trusted packaging partner for businesses across Delhi NCR.
           </p>
         </ScrollReveal>
