@@ -23,16 +23,7 @@ const CompanyIntro = () => {
               boxes, custom packaging solutions, and industrial packaging
               products tailored to meet diverse business needs.
             </p>
-            <p className="text-body mb-8">
-              Our state-of-the-art manufacturing facility is equipped with
-              modern machinery and managed by a skilled team of 30+
-              professionals. We serve clients across industries — from FMCG
-              and electronics to publishing and agriculture — delivering
-              packaging that protects products and strengthens brands. Our
-              commitment to quality manufacturing and timely delivery has
-              made us a preferred packaging supplier in Noida and the
-              greater Delhi NCR region.
-            </p>
+
 
             {/* Client logos */}
             <div className="border-t border-border pt-8">
