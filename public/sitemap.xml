@@ -1,26 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
   <url>
     <loc>https://mrenterprises2000.in/</loc>
+    <lastmod>2026-02-06</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
 
+  <!-- About Us -->
   <url>
     <loc>https://mrenterprises2000.in/about</loc>
+    <lastmod>2026-02-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Products Listing -->
+  <url>
+    <loc>https://mrenterprises2000.in/products</loc>
+    <lastmod>2026-02-06</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Product Detail Pages -->
+  <url>
+    <loc>https://mrenterprises2000.in/products/corrugated-cardboard-boxes</loc>
+    <lastmod>2026-02-06</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <url>
-    <loc>https://mrenterprises2000.in/products</loc>
-    <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
+    <loc>https://mrenterprises2000.in/products/printed-corrugated-boxes</loc>
+    <lastmod>2026-02-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
 
   <url>
+    <loc>https://mrenterprises2000.in/products/fruits-corrugated-boxes</loc>
+    <lastmod>2026-02-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://mrenterprises2000.in/products/duplex-printed-boxes</loc>
+    <lastmod>2026-02-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://mrenterprises2000.in/products/packaging-corrugated-boxes</loc>
+    <lastmod>2026-02-06</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://mrenterprises2000.in/products/packing-boxes</loc>
+    <lastmod>2026-02-06</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://mrenterprises2000.in/products/paper-roll</loc>
+    <lastmod>2026-02-06</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Contact -->
+  <url>
     <loc>https://mrenterprises2000.in/contact</loc>
+    <lastmod>2026-02-06</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
