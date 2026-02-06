@@ -16,7 +16,7 @@ const CTASection = () => {
             Get in touch with MR Enterprises today for a free consultation
             and competitive quote. Whether you need custom corrugated boxes,
             industrial packaging, or bulk shipping solutions — our team in
-            Greater Noida is ready to help.
+            Noida & Greater Noida is ready to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="accent" size="xl" asChild>
