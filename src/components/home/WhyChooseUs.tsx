@@ -1,4 +1,4 @@
-import { Package, Truck, Shield, Award, Ruler, IndianRupee } from "lucide-react";
+import { Package, Truck, Shield, Award, Ruler } from "lucide-react";
 import { motion } from "framer-motion";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations";
 
@@ -17,11 +17,6 @@ const features = [
     icon: Ruler,
     title: "Custom Sizes & Designs",
     description: "We manufacture corrugated boxes in any size or specification to suit your product requirements.",
-  },
-  {
-    icon: IndianRupee,
-    title: "Competitive Pricing",
-    description: "Factory-direct pricing from our Noida & Greater Noida facility ensures you get the best value without compromises.",
   },
   {
     icon: Award,
