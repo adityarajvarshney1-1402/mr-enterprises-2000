@@ -16,10 +16,10 @@ const HeroSection = () => {
         <div className="absolute inset-0 gradient-hero" />
       </div>
 
-      <div className="container-wide relative z-10 pt-20">
-        <div className="max-w-3xl">
+      <div className="container-wide relative z-10 pt-20 flex items-center justify-center min-h-[80vh]">
+        <div className="max-w-4xl w-full text-center mx-auto space-y-8">
           <motion.p
-            className="text-caption text-accent mb-6"
+            className="text-caption text-accent mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -28,7 +28,7 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.h1
-            className="heading-hero text-primary-foreground mb-8"
+            className="heading-hero text-primary-foreground mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -39,7 +39,7 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-primary-foreground/80 mb-10 leading-relaxed"
+            className="text-xl md:text-2xl text-primary-foreground/80 mb-8 leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -50,7 +50,7 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-4 justify-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
