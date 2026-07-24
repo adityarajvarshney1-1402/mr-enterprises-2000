@@ -210,7 +210,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, scale: 1, rotate: -12 }}
               transition={{ duration: 0.7, delay: 0.85, type: "spring" }}
               whileHover={{ rotate: -3, scale: 1.05 }}
-              className="absolute -bottom-4 -left-4 w-20 h-20 md:w-24 md:h-24 bg-kraft-dark rounded-2xl shadow-xl z-20 overflow-hidden"
+              className="absolute -bottom-8 -left-8 md:-left-10 w-20 h-20 md:w-24 md:h-24 bg-kraft-dark rounded-2xl shadow-xl z-20 overflow-hidden"
             >
               <div
                 className="w-full h-full opacity-40"
