@@ -3,6 +3,8 @@ import { ArrowRight, Users, Target, Award, Factory, Building2, BadgeCheck, Check
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import Seo, { SITE_URL } from "@/components/Seo";
+
 import { PageTransition, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations";
 
 const values = [
@@ -62,7 +64,19 @@ const productList = [
 const About = () => {
   return (
     <Layout>
+      <Seo
+        title="About MR Enterprises | Corrugated Box Manufacturer Since 2000"
+        description="MR Enterprises has manufactured corrugated packaging in Greater Noida since 2000, serving clients like LG, DS Group, Frank Brothers and Macmillan across Delhi NCR."
+        path="/about"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          name: "About MR Enterprises",
+          url: `${SITE_URL}/about`,
+        }}
+      />
       <PageTransition>
+
         {/* Hero Section */}
         <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-secondary">
           <div className="container-wide">

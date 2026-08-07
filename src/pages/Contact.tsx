@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/layout/Layout";
+import Seo, { SITE_URL } from "@/components/Seo";
+
 import { PageTransition, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations";
 
 const addresses = [
@@ -82,7 +84,19 @@ const Contact = () => {
 
   return (
     <Layout>
+      <Seo
+        title="Contact MR Enterprises | Packaging Supplier in Noida"
+        description="Contact MR Enterprises for corrugated box quotes in Noida & Greater Noida. Call +91 98105 04174 or email mrenterprises2000@gmail.com. Open Mon-Sat, 9 AM-8 PM."
+        path="/contact"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact MR Enterprises",
+          url: `${SITE_URL}/contact`,
+        }}
+      />
       <PageTransition>
+
         {/* Hero Section */}
         <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-secondary">
           <div className="container-wide">

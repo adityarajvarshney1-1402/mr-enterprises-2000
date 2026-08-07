@@ -3,6 +3,8 @@ import { ArrowLeft, ArrowRight, Phone, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import Seo, { SITE_URL } from "@/components/Seo";
+
 import { PageTransition, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations";
 
 // Import product images
@@ -93,7 +95,40 @@ const ProductDetail = () => {
 
   return (
     <Layout>
+      <Seo
+        title={`${product.name} Manufacturer in Noida | MR Enterprises`}
+        description={product.description.slice(0, 155)}
+        path={`/products/${slug}`}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: product.name,
+            description: product.description,
+            image: `${SITE_URL}${product.image}`,
+            category: "Corrugated Packaging",
+            url: `${SITE_URL}/products/${slug}`,
+            brand: { "@type": "Brand", name: "MR Enterprises" },
+            manufacturer: { "@type": "Organization", name: "MR Enterprises", url: SITE_URL },
+            additionalProperty: product.features.map((f) => ({
+              "@type": "PropertyValue",
+              name: "Feature",
+              value: f,
+            })),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+              { "@type": "ListItem", position: 2, name: "Products", item: `${SITE_URL}/products` },
+              { "@type": "ListItem", position: 3, name: product.name, item: `${SITE_URL}/products/${slug}` },
+            ],
+          },
+        ]}
+      />
       <PageTransition>
+
         {/* Breadcrumb */}
         <div className="pt-24 pb-4 bg-secondary">
           <div className="container-wide">

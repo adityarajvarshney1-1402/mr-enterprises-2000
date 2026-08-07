@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Layout from "@/components/layout/Layout";
+import Seo, { SITE_URL } from "@/components/Seo";
+
 import { Button } from "@/components/ui/button";
 import { PageTransition, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations";
 
@@ -27,7 +29,24 @@ const productCategories = [
 const Products = () => {
   return (
     <Layout>
+      <Seo
+        title="Corrugated Packaging Products | MR Enterprises Noida"
+        description="Browse corrugated cardboard boxes, printed boxes, fruit boxes, duplex boxes, packing boxes and paper rolls manufactured in Greater Noida by MR Enterprises."
+        path="/products"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Corrugated Packaging Products",
+          itemListElement: productCategories.map((p, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            url: `${SITE_URL}/products/${p.slug}`,
+            name: p.name,
+          })),
+        }}
+      />
       <PageTransition>
+
         {/* Hero Section */}
         <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-secondary">
           <div className="container-wide">
