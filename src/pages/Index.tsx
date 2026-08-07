@@ -18,23 +18,10 @@ const Index = () => {
         path="/"
         jsonLd={{
           "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: "MR Enterprises",
-          url: SITE_URL,
-          telephone: "+91-9810504174",
-          email: "mrenterprises2000@gmail.com",
-          priceRange: "₹₹",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "Plot No - 112, Ground Floor, Udyog Kendra II",
-            addressLocality: "Greater Noida",
-            addressRegion: "Uttar Pradesh",
-            postalCode: "201310",
-            addressCountry: "IN",
-          },
-          geo: { "@type": "GeoCoordinates", latitude: "28.4744", longitude: "77.5040" },
-          openingHours: "Mo-Sa 09:00-20:00",
-          areaServed: ["Greater Noida", "Noida", "Delhi NCR", "Ghaziabad", "Faridabad"],
+          "@type": "WebPage",
+          name: "Corrugated Box Manufacturer in Noida & Greater Noida",
+          url: `${SITE_URL}/`,
+          about: { "@type": "Organization", name: "MR Enterprises", url: SITE_URL },
         }}
       />
       <PageTransition>
