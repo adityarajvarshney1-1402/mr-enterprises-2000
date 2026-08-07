@@ -3,6 +3,8 @@ import { ArrowLeft, ArrowRight, Phone, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import Seo, { SITE_URL } from "@/components/Seo";
+
 import { PageTransition, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations";
 
 // Import product images
